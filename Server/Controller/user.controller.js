@@ -1,7 +1,7 @@
 
 const userModel = require('../Model/user.model')
 
-const registerUser =(req, res)=>{
+const postregisterUser =(req, res)=>{
     let user = new userModel(req.body)
     user.save()
     .then((response)=>{
@@ -14,7 +14,7 @@ const registerUser =(req, res)=>{
     })
 } 
 
-const authenticateUser = (req, res)=>{
+const postauthenticateUser = (req, res)=>{
      let {password} = req.body
      userModel.findOne({email:req.body.email})
      .then((user)=>{
@@ -35,4 +35,4 @@ const authenticateUser = (req, res)=>{
 }
 
 
-module.exports = {registerUser, authenticateUser}
+module.exports = {postregisterUser, postauthenticateUser}

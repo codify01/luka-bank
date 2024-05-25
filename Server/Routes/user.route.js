@@ -1,8 +1,8 @@
 const express = require('express')
-const { registerUser, authenticateUser } = require('../Controller/user.controller')
+const { postregisterUser, postauthenticateUser } = require('../Controller/user.controller')
 const userRouter = express.Router()
 
-userRouter.get("/welcome", (req,res)=>{
+userRouter.get("/dashboard", (req,res)=>{
     let allUser = [
         {
             firstname:"Uthman",
@@ -18,11 +18,11 @@ userRouter.get("/welcome", (req,res)=>{
     res.send({message:allUser})
 })
 
-// userRouter.get("/register", registerUser)
-// userRouter.get("/signin", authenticateUser)
+// userRouter.get("/register", getregisterUser)
+// userRouter.get("/signin", getauthenticateUser)
 
-userRouter.post("/register", registerUser )
-userRouter.post("/signin", authenticateUser)
+userRouter.post("/register", postregisterUser )
+userRouter.post("/login", postauthenticateUser)
 
 
 module.exports = userRouter
