@@ -1,8 +1,10 @@
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
-let endpoint = "http://localhost:5000/user/signin"
+import { useNavigate } from 'react-router-dom'
+let endpoint = "https://luka-bank.onrender.com/user/signin"
 const Signin = () => {
+    const navigate = useNavigate()
   const formik = useFormik({
     initialValues:{
         email:'',
@@ -15,11 +17,12 @@ const Signin = () => {
     onSubmit: (value)=>{
             console.log(value);
             axios.post(endpoint, value)
+            
             .then((response)=>{
-                console.log(response.data);                
+                console.log(response.data);  
+                navigate('/')
             })
             .catch((err)=>{
-                // console.log(err);
                 console.log(err.code);
                 console.log(err.message);
             })

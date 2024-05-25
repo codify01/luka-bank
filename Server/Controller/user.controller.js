@@ -15,7 +15,6 @@ const registerUser =(req, res)=>{
 } 
 
 const authenticateUser = (req, res)=>{
-     console.log(req.body);
      let {password} = req.body
      userModel.findOne({email:req.body.email})
      .then((user)=>{
