@@ -1,11 +1,11 @@
 
 const userModel = require('../Model/user.model')
 
-const getregisterUser = ()=>{
+const getregisterUser = (req,res)=>{
     res.send('you are now a registered user')
 }
 
-const getauthenticateUser = ()=>{
+const getauthenticateUser = (req,res)=>{
     res.send('You are now authentical')
 }
 
@@ -44,4 +44,4 @@ const postauthenticateUser = (req, res)=>{
 }
 
 
-module.exports = {postregisterUser, postauthenticateUser}
+module.exports = {postregisterUser, postauthenticateUser, getregisterUser}
