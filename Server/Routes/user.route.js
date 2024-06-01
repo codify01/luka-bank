@@ -1,5 +1,5 @@
 const express = require('express')
-const { postregisterUser, postauthenticateUser,getregisterUser } = require('../Controller/user.controller')
+const { postregisterUser, postauthenticateUser,getregisterUser,getauthenticateUser } = require('../Controller/user.controller')
 const userRouter = express.Router()
 
 userRouter.get("/dashboard", (req,res)=>{
@@ -19,7 +19,7 @@ userRouter.get("/dashboard", (req,res)=>{
 })
 
 userRouter.get("/register", getregisterUser)
-// userRouter.get("/signin", getauthenticateUser)
+userRouter.get("/signin", getauthenticateUser)
 
 userRouter.post("/register", postregisterUser )
 userRouter.post("/login", postauthenticateUser)

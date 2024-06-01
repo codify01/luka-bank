@@ -44,4 +44,4 @@ const postauthenticateUser = (req, res)=>{
 }
 
 
-module.exports = {postregisterUser, postauthenticateUser, getregisterUser}
+module.exports = {postregisterUser, postauthenticateUser, getregisterUser, getauthenticateUser}
