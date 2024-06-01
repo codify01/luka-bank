@@ -14,8 +14,7 @@ let userSchema = mongoose.Schema({
 let saltRound = 10 
 
 userSchema.pre('save', function(next){
-     bcrypt.hash(this.password, saltRound, (err, hashedpassword)=>{
-      
+     bcrypt.hash(this.password, saltRound, function(err, hashedpassword){
         if(err){
             console.log(err);
         }else{

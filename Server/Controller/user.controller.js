@@ -1,6 +1,15 @@
 
 const userModel = require('../Model/user.model')
 
+const getregisterUser = ()=>{
+    res.send('you are now a registered user')
+}
+
+const getauthenticateUser = ()=>{
+    res.send('You are now authentical')
+}
+
+
 const postregisterUser =(req, res)=>{
     let user = new userModel(req.body)
     user.save()
